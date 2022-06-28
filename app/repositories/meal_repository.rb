@@ -4,8 +4,8 @@ require_relative "../models/meal"
 class MealRepository
   def initialize(csv_file)
     @csv_file = csv_file
-    @meals = File.exists?(csv_file) ? load_csv(csv_file) : []
-    @next_id = @meals.empty? ? 1 :  @meals.last.id + 1
+    @meals = File.exist?(csv_file) ? load_csv(csv_file) : []
+    @next_id = @meals.empty? ? 1 : @meals.last.id + 1
   end
 
   def create(meal)
