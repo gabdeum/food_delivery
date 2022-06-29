@@ -1,8 +1,6 @@
-require_relative '../models/meal'
-
-class View
+class MealsView
   def ask_user_for_meal
-    puts "\r\nEnter meal to add"
+    puts "Enter meal to add"
     print "Name: "
     name = gets.chomp
     print "Price: "

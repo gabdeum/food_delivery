@@ -5,15 +5,15 @@ require_relative '../views/meals_view'
 class MealsController
   def initialize(meal_repository)
     @meal_repository = meal_repository
-    @view = View.new
+    @meals_view = MealsView.new
   end
 
   def add
-    meal = @view.ask_user_for_meal
+    meal = @meals_view.ask_user_for_meal
     @meal_repository.create(meal)
   end
 
   def list
-    @view.display_meals(@meal_repository.all)
+    @meals_view.display_meals(@meal_repository.all)
   end
 end
